@@ -16,7 +16,6 @@ graphviz
 
 # Player de vídeos e outros componentes
 streamlit-player==0.1.5
-streamlit-timeline==0.1.0  # Se instalou manualmente via GitHub, me avise
 
 # Outros (se usados)
 plotly-express==0.4.1  # Incluído no plotly atual, só adicione se precisar separado
