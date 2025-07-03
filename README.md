@@ -93,7 +93,7 @@ Cada visão obteve um painel que reflete as métricas solicitadas.
 
 Painel online, hospedado em um Cloud e disponível para acesso em
 qualquer dispositivo conectado à internet.
-O painel pode ser acessado através desse link: 
+O painel pode ser acessado através desse link: https://fomezero-portifolio-mariana-lira.streamlit.app/
 
 
 
