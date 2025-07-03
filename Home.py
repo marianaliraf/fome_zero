@@ -12,7 +12,6 @@ import plotly.graph_objects as go
 import io
 import matplotlib.pyplot as plt
 import streamlit.components.v1 as components
-from graph_builder import *
 from streamlit_player import st_player
 import os
 import sys
@@ -21,8 +20,6 @@ from streamlit_folium import folium_static
 from branca.colormap import linear
 from folium.plugins import MarkerCluster
 import base64
-import locale
-locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from Utils import Utils
@@ -92,6 +89,11 @@ def styled_metric(title, value):
             <p style="margin:8px 0 0 0; font-size:24px;"><b>{value}</b></p>
         </div>
     """, unsafe_allow_html=True)
+
+def format_number(value):
+    if pd.isna(value):
+        return ""
+    return f"{value:,.0f}".replace(",", ".")
     
 #====================================================
 #Barra Lateral
@@ -132,7 +134,7 @@ with st.container():
     with col1:
         qtd_restaurant = df['restaurant_id'].nunique()
         #col1.metric('Restaurants', locale.format_string('%.0f', qtd_restaurant, grouping=True))
-        styled_metric('Restaurants', locale.format_string('%.0f', qtd_restaurant, grouping=True))
+        styled_metric('Restaurants', format_number(qtd_restaurant))
 
     with col2:
         country = df['country_code'].nunique()
@@ -143,7 +145,7 @@ with st.container():
     with col4:
         review = df['votes'].sum()
         #col4.metric('Restaurant Reviews', str(review))
-        styled_metric('Restaurant Reviews', locale.format_string('%.0f', review, grouping=True))
+        styled_metric('Restaurant Reviews', format_number(review))
     with col5:
         review = df['cuisines'].nunique()
         styled_metric('Cuisines', str(review))
