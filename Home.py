@@ -5,19 +5,10 @@ import numpy as np
 import pandas as pd
 from PIL import Image
 import plotly.express as px
-import plotly.figure_factory as ff
-import requests
-import re
-import plotly.graph_objects as go
-import io
-import matplotlib.pyplot as plt
-import streamlit.components.v1 as components
-from streamlit_player import st_player
 import os
 import sys
 import folium
 from streamlit_folium import folium_static
-from branca.colormap import linear
 from folium.plugins import MarkerCluster
 import base64
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
