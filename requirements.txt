@@ -7,12 +7,14 @@ altair
 matplotlib
 Pillow
 requests
+inflection
 
 # Folium e suporte para mapas
 folium
 streamlit-folium
-branca
 graphviz
+
+
 
 # Player de vídeos e outros componentes
 streamlit-player
